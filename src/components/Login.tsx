@@ -31,8 +31,8 @@ export const Login: React.FC<LoginProps> = ({ handleGoogleLogin, isInstallable, 
         <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-50 rounded-full blur-2xl opacity-70"></div>
         <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-emerald-50 rounded-full blur-2xl opacity-70"></div>
         <div className="relative z-10">
-          <div className="bg-indigo-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-indigo-600 shadow-inner">
-            <ClipboardList size={48} />
+          <div className="bg-white w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg overflow-hidden border border-slate-100">
+            <img src="./logo.png" alt="Logo" className="w-full h-full object-cover" />
           </div>
           <h1 className="text-3xl font-black text-slate-800 tracking-tight">SOKO App</h1>
           <p className="text-slate-500 text-sm mt-3 leading-relaxed font-medium">အရောင်းနှင့် မှတ်တမ်းစီမံခန့်ခွဲမှုစနစ်</p>

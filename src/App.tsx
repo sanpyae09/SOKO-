@@ -105,7 +105,22 @@ export default function App() {
     });
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
-      if (!session) {
+      if (isAuthLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
+        <div className="w-24 h-24 bg-white rounded-3xl shadow-xl flex items-center justify-center mb-6 overflow-hidden animate-pulse border border-slate-100">
+          <img src="./logo.png" alt="Logo" className="w-full h-full object-cover" />
+        </div>
+        <div className="flex items-center gap-2 text-slate-400 font-medium">
+          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce"></div>
+          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce [animation-delay:0.4s]"></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!session) {
         setProducts([]); setRecords([]); setPaymentAccounts([]); setCart([]);
       }
     });
@@ -511,7 +526,20 @@ export default function App() {
   const filterOptions: Record<string, string> = { weekly: 'ယခုအပတ်', monthly: 'ယခုလ', yearly: 'ယခုနှစ်', all: 'အားလုံး' };
   const titles: Record<string, string> = { home: 'ပင်မစာမျက်နှာ', pos: 'POS (လက်လီအရောင်း)', addProduct: 'ပစ္စည်း သွင်းမည်', viewProducts: 'ကုန်ပစ္စည်း စာရင်း', view: 'မှတ်တမ်းအားလုံး', daily: 'နေ့စဉ်အရောင်း', delivery: 'Delivery စာရင်း', settings: 'ဆက်တင်များ' };
 
-  if (isAuthLoading) return null;
+  if (isAuthLoading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex flex-col items-center justify-center p-4">
+        <div className="w-24 h-24 bg-white rounded-3xl shadow-xl flex items-center justify-center mb-6 overflow-hidden animate-pulse border border-slate-100">
+          <img src="./logo.png" alt="Logo" className="w-full h-full object-cover" />
+        </div>
+        <div className="flex items-center gap-2 text-slate-400 font-medium">
+          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce"></div>
+          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+          <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce [animation-delay:0.4s]"></div>
+        </div>
+      </div>
+    );
+  }
   if (!session) return <Login handleGoogleLogin={handleGoogleLogin} isInstallable={isInstallable} handleInstallClick={handleInstallClick} />;
 
   return (

@@ -43,7 +43,9 @@ export const Layout: React.FC<LayoutProps> = ({
               <Menu size={24} />
             </button>
             <div className="flex items-center gap-2">
-              <ClipboardList size={22} className="text-indigo-600 hidden sm:block" />
+              <div className="w-8 h-8 rounded-lg overflow-hidden border border-slate-100 shadow-sm hidden sm:block">
+                <img src="./logo.png" alt="Logo" className="w-full h-full object-cover" />
+              </div>
               <h1 className="text-lg md:text-xl font-black text-slate-900 tracking-tight">SOKO</h1>
             </div>
           </div>
@@ -66,7 +68,9 @@ export const Layout: React.FC<LayoutProps> = ({
         )}>
           <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-indigo-50">
             <div className="flex items-center gap-3 text-indigo-900">
-              <ClipboardList size={24} className="text-indigo-600" />
+              <div className="w-8 h-8 rounded-lg overflow-hidden border border-indigo-200 shadow-sm">
+                <img src="./logo.png" alt="Logo" className="w-full h-full object-cover" />
+              </div>
               <span className="font-bold text-lg">SOKO App</span>
             </div>
             <button onClick={() => setIsMenuOpen(false)} className="p-2 text-slate-400 hover:bg-slate-200 hover:text-slate-700 rounded-full transition-colors">
