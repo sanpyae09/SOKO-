@@ -1,0 +1,5 @@
+{
+  "name": "SOKO App",
+  "description": "A comprehensive POS and inventory management system with PWA support.",
+  "requestFramePermissions": []
+}
